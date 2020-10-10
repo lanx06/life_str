@@ -19,6 +19,9 @@ imgur.setClientId(client_id);
 app.use(bodyParser.json({limit: '50mb'}));
 app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
 
+console.log("server work");
+
+
 function upload_image(base64,callback) {
     //var imgurFavicon = ;
     //console.log(base64)
@@ -34,9 +37,7 @@ function upload_image(base64,callback) {
     
 }
 //var smlpe="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAmUlEQVQ4je2TsQ3CMBBFnxMa08WR2IQKJskIUNwMZAcYwWIQMs65JCUpEEIYW4pJy6v+6e6+/hVnnGsAzsCBMi7AsbbW/rIMsAU2xrnmkeruuzW7zgIw+JGbv6fGQpWzfy3HOsJlDQY/AlCv3jpF9oS5ZBOICKoB1YCIlCdQDR9127qyBHP5Gyw3CBXPr/qi709JHXE1S995AsqoJu8x78GsAAAAAElFTkSuQmCC"
-var path="C:/Users/abc20/Downloads/圖/下載.png"
-var image= fs.readFileSync(path);
-var image_1=image.toString('base64')
+
 //console.log(image_1)
 //upload_image(image_1,(indata)=>console.log(indata))
 function activity_data(dosome,inreq)
