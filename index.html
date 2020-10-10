@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>life_str </title>
+    
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css_package.css">
+    
+    <script src="./js_package.js" type="text/javascript" charset="UTF-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+</head>
+<body style="justify-content:center;">
+    <div class="menu">
+        <div class="label">
+            new image
+        </div>
+    </div>
+    <div class="content">
+        
+
+    </div>
+
+
+    <script>
+    /*
+    
+    */
+
+    load_data_number=0
+    one_add=3
+    get_data_form_server(0,3,show_data)
+    load_data_number+=3
+
+    var ele=create_file_upload_element()
+    
+    var up_load_div= document.createElement("div")
+    var input_text=document.createElement("textarea")
+    var input_name= document.createElement("input")
+    var click_buttun=document.createElement("button")
+    var remove=document.createElement("img")
+
+
+    remove.src="https://img.icons8.com/fluent-systems-filled/344/xbox-x.png"
+
+    input_name.className='input_name'
+    input_text.className="input_text"
+    up_load_div.className="upload_div"
+    click_buttun.className="input_button"
+    click_buttun.innerHTML="upload"
+    remove.className="remove_img"
+
+
+    up_load_div.appendChild(remove)
+    ele.element[0].appendChild(ele.element[2])
+    ele.element[1].innerHTML="drag file to here"
+    input_name.placeholder="name or title"
+    input_text.placeholder="some text"
+    
+    up_load_div.appendChild(input_name)
+    up_load_div.appendChild(input_text)
+    
+    
+
+    //dropbox
+    up_load_div.appendChild(ele.element[0])
+    //input element
+    up_load_div.appendChild(ele.element[1])
+    up_load_div.appendChild(click_buttun)
+    
+    
+    click_buttun.addEventListener("click",get_data_send)
+    remove.addEventListener("click",()=>up_load_div.remove())
+    $(".label")[0].addEventListener("click",()=>document.body.appendChild(up_load_div))
+    
+    $(window).scroll(function(event){
+        var wScrollY = window.scrollY; // 當前滾動條位置  
+        var wInnerH = window.innerHeight; // 裝置視窗的高度（不會變）  
+        var bScrollH = document.body.scrollHeight; // 滾動條總高度      
+        if (wScrollY + wInnerH >= bScrollH) {          
+            get_data_form_server(load_data_number,one_add,show_data)
+            load_data_number+=one_add
+        }  
+    });
+    //document.body.style.backgroundColor="#000000"
+    
+
+    </script>
+    <style type="text/css">
+    
+    
+    </style>
+
+</body>
+</html>
