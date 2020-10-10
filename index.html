@@ -70,7 +70,8 @@
     up_load_div.appendChild(click_buttun)
     
     
-    click_buttun.addEventListener("click",get_data_send)
+    click_buttun.addEventListener("click",function(){get_data_send()
+        up_load_div.remove()} )
     remove.addEventListener("click",()=>up_load_div.remove())
     $(".label")[0].addEventListener("click",()=>document.body.appendChild(up_load_div))
     

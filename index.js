@@ -121,7 +121,7 @@ app.post('/add_data', function (req, res) {
         //console.log(add_data["base64"])
         delete add_data["base64"]
         add_data["image_url"]=link
-        data["data"].push(add_data)
+        data["data"].unshift(add_data)
         
         
         fs.writeFile(datafile,JSON.stringify(data, null, "\t"), function (err) {
